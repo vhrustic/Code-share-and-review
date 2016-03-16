@@ -270,3 +270,40 @@ form > textarea {
     margin-top: 15px;
     width: 20% !important;
 }
+
+/*pocetak languages stylesheeta*/
+table {
+    border-collapse: collapse;
+    font-family: Arial;
+    font-size: 14px;
+    width: 60%;
+    margin: auto;
+    margin-top: 45px;
+    border: 3px solid grey;
+    margin-bottom: 624px;
+}
+
+table > caption {
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+table > thead > tr > th {
+    height: 40px;
+    border: 2px solid grey;
+    background-color: deepskyblue;
+}
+
+table > tbody > tr > td {
+    border: 1px solid grey;
+    height: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+table > tbody > tr:nth-child(odd) { 
+    background-color:#eee; }
+
+table > tbody > tr:nth-child(even) { 
+    background-color:#CACACA; }
