@@ -14,13 +14,24 @@ body {
 .page_header {    
     background-image: linear-gradient(#0067A7,#003F71);
     color: white;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
-.page_header > h1 {
+.page_header  h1 {
+    display: inline-block;
     width: 60%;
     margin: auto;
+    top: 10px;
+    position: absolute;
+    margin-left: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#header_content {
+    width: 60%;
+    margin: auto;
+    position: relative;
 }
 
 nav {
@@ -241,7 +252,7 @@ form {
     padding: 20px 15px;
     border-radius: 5px;
     border: 1px gray outset;
-    margin-bottom: 328px;
+    margin-bottom: 327px;
 }
 
 form > label {
@@ -280,7 +291,7 @@ table {
     margin: auto;
     margin-top: 45px;
     border: 3px solid grey;
-    margin-bottom: 624px;
+    margin-bottom: 623px;
 }
 
 table > caption {
@@ -303,7 +314,119 @@ table > tbody > tr > td {
 }
 
 table > tbody > tr:nth-child(odd) { 
-    background-color:#eee; }
+    background-color:#eee; 
+}
 
 table > tbody > tr:nth-child(even) { 
-    background-color:#CACACA; }
+    background-color:#CACACA; 
+}
+
+/*logo stylesheet*/
+#logo_container {
+    background-color: cornflowerblue;
+    width: 110px;
+    height: 60px;
+    border-radius: 4px;
+    border: 3px solid #0067A7;
+    position: relative;
+    margin: auto;
+    display: inline-block;
+}
+
+#c_slovo_outer {
+    transform: rotate(9deg);
+    margin-top: 8px;
+    margin-left: 5px;
+    background-color: #FF9940;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+}
+
+#c_slovo_inner {
+    transform: rotate(3deg);
+    margin-top: 8px;
+    margin-left: 5px;
+    position: relative;
+    margin-left: 9px;
+    top: 7px;
+    width: 25px;
+    height: 25px;
+    background-color: cornflowerblue;
+    border-radius: 20%;
+}
+
+#c_slovo_odsjecak {
+    margin-left: 5px;
+    position: absolute;
+    top: 0px;
+    left: 26px;
+    background-color: cornflowerblue;
+    height: 53px;
+    width: 30px;
+}
+
+#s_slovo_outer {
+    width: 30px;
+    height: 40px;
+    border-radius: 10%;
+    background-color: #CC4F14;
+    position: absolute;
+    top: 8px;
+    left: 35px;
+}
+
+.s_slovo_odsjecak {
+    height: 12px;
+    width: 25px;
+    background-color: cornflowerblue;
+    position: absolute;
+    left: 42px;
+    top: 13px;
+}
+
+#drugi_s_odsjecak {
+    top: 31px !important;
+    left: 33px;
+}
+
+#r_slovo_left {
+    width: 8px;
+    background-color: #3D4099;
+    height: 40px;
+    position: absolute;
+    top: 8px;
+    left: 70px;
+}
+
+#r_slovo_rec {
+    width: 17px;
+    height: 25px;
+    background-color: #3D4099;
+    position: absolute;
+    left: 78px;
+    top: 8px;
+    border-radius: 10%;
+}
+
+#r_slovo_rec_inner {
+    position: absolute;
+    width: 76%;
+    height: 58%;
+    top: 5px;
+    left: -1px;
+    border-radius: 10%;
+    transform: rotate(10deg);
+    background-color: cornflowerblue;
+}
+
+#r_slovo_nogica {
+    width: 7px;
+    background-color: #3D4099;
+    height: 29px;
+    position: absolute;
+    top: 22px;
+    left: 80px;
+    transform: rotate(-50deg);
+    border-radius: 5%;
+}
