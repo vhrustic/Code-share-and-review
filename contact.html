@@ -21,18 +21,17 @@
         </ul>
     </nav>
 
-    <section id="links">
-        <h3>Preporučene stranice</h3>
-        <ul>
-            <li><a href="https://github.com/">GitHub</a></li>
-            <li><a href="http://pastebin.com/">PasteBin</a></li>
-            <li><a href="https://sourceforge.net/">SourceForge</a></li>
-            <li><a href="https://codeshare.io">CodeShare</a></li>
-            <li><a href="https://sourceforge.net/">SourceForge</a></li>
-            <li><a href="http://osliving.com/">OpenSourceLiving</a></li>
-
-        </ul>
-    </section>
+    <form>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="email adresa">
+        <label>Datum rođenja</label>
+        <input type="date" name="bday" placeholder="datum rođenja">
+        <label>Vaša stranica</label>
+        <input type="url" name="url" placeholder="web stranica">
+        <label>Poruka</label>
+        <textarea name="msg" placeholder="poruka..."></textarea>
+        <input type="submit" id="send_button" value="Pošalji">
+    </form>
 
     <footer>
         Copyright © CodeShareAndReview.com - 2016
