@@ -14,6 +14,7 @@ html {
 
 body {
     background-color: white;
+    margin-bottom: 60px;
 }
 
 .page_header {    
@@ -25,12 +26,14 @@ body {
 
 .page_header  h1 {
     display: inline-block;
-    width: 60%;
+    width: 100%;
     margin: auto;
-    top: 10px;
+    top: 15px;
     position: absolute;
     margin-left: 10px;
     font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    padding-left: 5px;
 }
 
 #header_content {
@@ -227,6 +230,7 @@ aside > h3 {
 #links {
     font-family: 'Arimo', sans-serif;
     margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 #links > ul {
@@ -267,6 +271,7 @@ form {
     padding: 20px 15px;
     border-radius: 5px;
     border: 1px gray outset;
+    margin-bottom: 20px;
 }
 
 form > label {
@@ -305,6 +310,7 @@ table {
     margin: auto;
     margin-top: 45px;
     border: 3px solid grey;
+    margin-bottom: 20px;
 }
 
 table > caption {
