@@ -7,6 +7,11 @@
     padding-left: 0px;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background-color: white;
 }
@@ -107,6 +112,7 @@ nav > ul > li {
     width: 60%;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #content > section {
@@ -144,6 +150,7 @@ nav > ul > li {
     box-shadow: 0 1px 3px rgba(0,0,0,0.3), inset 0 -1px 1px rgba(0,0,0,0.1);
     border: solid #ccc 1px;
     min-height: 300px;
+    padding-bottom: 20px;
 }
 
 #content > aside h3 {
@@ -164,6 +171,10 @@ nav > ul > li {
     border-top: 1px solid grey;
     margin-top: 10px;
     margin-bottom: 5px;
+}
+
+.clear {
+    clear: both;
 }
 
 .other_news {
@@ -188,6 +199,11 @@ footer {
     font-size: 12px;
     font-family: sans-serif;
     color: dimgray;
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    height: 3em;
 }
 
 aside > ul {
@@ -211,7 +227,6 @@ aside > h3 {
 #links {
     font-family: 'Arimo', sans-serif;
     margin-top: 25px;
-    margin-bottom: 655px;
 }
 
 #links > ul {
@@ -252,7 +267,6 @@ form {
     padding: 20px 15px;
     border-radius: 5px;
     border: 1px gray outset;
-    margin-bottom: 327px;
 }
 
 form > label {
@@ -291,7 +305,6 @@ table {
     margin: auto;
     margin-top: 45px;
     border: 3px solid grey;
-    margin-bottom: 623px;
 }
 
 table > caption {
