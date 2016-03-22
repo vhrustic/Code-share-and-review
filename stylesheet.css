@@ -154,6 +154,7 @@ nav > ul > li {
     border: solid #ccc 1px;
     min-height: 300px;
     padding-bottom: 20px;
+    word-wrap: break-word;
 }
 
 #content > aside h3 {
