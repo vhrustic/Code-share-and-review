@@ -177,6 +177,17 @@ nav > ul > li {
     clear: both;
 }
 
+#news_selection {
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+#news_selection > select {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
 .other_news {
     /*float: left;
     width: 48%;
