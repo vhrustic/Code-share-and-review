@@ -38,21 +38,22 @@
         </ul>
     </nav>
 
-    <form>
+    <form onsubmit="validateForm()">
         <label>Email</label>
-        <input type="email" name="email" placeholder="email adresa">
+        <input type="email" name="email" placeholder="email adresa" onkeyup="validateEmail()">
         <label>Datum rođenja</label>
-        <input type="date" name="bday">
+        <input type="date" name="bday" onchange="validateBirthday()">
         <label>Vaša stranica</label>
-        <input type="url" name="url" placeholder="web stranica">
+        <input type="url" name="url" placeholder="web stranica" onkeyup="validateUrl()">
         <label>Poruka</label>
-        <textarea name="msg"></textarea>
+        <textarea name="msg" onkeyup="validateMessage()"></textarea>
         <input type="submit" id="send_button" value="Pošalji">
     </form>
 
     <footer>
         Copyright © CodeShareAndReview.com - 2016
     </footer>
+    <script src="validation.js"></script>
 </body>
 
 </html>
