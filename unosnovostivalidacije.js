@@ -1,6 +1,7 @@
 var errorPoruke = "";
 
 function validateForm(){
+	if(errorPorukeKodTel.length > 0) return false;
 	errorPoruke = "";
 	errorPoruke += validateNaslov() + validateSadrzaj() + validateUrl();
 	if(errorPoruke.length > 0) {alert(errorPoruke); return false;}
@@ -36,4 +37,41 @@ function validateUrl(){
 	errrorMsg += validateAgainstXSS(url, "Url slike");
 	if(url.substring(url.length-4) != ".jpg" && url.substring(url.length-4) != ".png") errrorMsg += "Slika mora biti .jpg ili .png formata. ";
 	return errrorMsg;
+}
+
+var errorPorukeKodTel = "";
+	var validanKod = true;
+	var validanBroj = true;
+
+function resetErrors(){
+	errorPorukeKodTel = "";
+	validanKod = true;
+	validanBroj = true;
+}
+
+function validateKodIbrojTelefona()
+{
+	var kod = document.querySelector("input[name=dkod]").value;
+	var brtel = document.querySelector("input[name=brtel]").value;
+
+	var ajax = new XMLHttpRequest();
+	if(brtel.length >0){
+	ajax.onreadystatechange = function() {// Anonimna funkcija
+		if (ajax.readyState == 4 && ajax.status == 200){
+			var JsonRezultat = JSON.parse(ajax.responseText);
+			if(JsonRezultat[0] == null) {errorPorukeKodTel += "Nepostojeći kod države! "; validanKod = false;}
+			else {
+				var cClength = JsonRezultat[0].callingCodes[0].length+1;
+				if(brtel.substring(0, cClength) != ('+' + JsonRezultat[0].callingCodes[0])){validanBroj = false; errorPorukeKodTel += " Pozivni broj ne odgovara izabranoj državi(očekivano: +" + JsonRezultat[0].callingCodes[0] +"). ";}
+				else if(brtel.length == cClength) {validanBroj = false; errorPorukeKodTel += "Uneseni broj telefona je nepotpun. ";}
+			}
+			if(errorPorukeKodTel.length > 0) { 
+				alert(errorPorukeKodTel);
+				if(!validanBroj) document.querySelector("input[name=brtel]").focus(); 
+				if(!validanKod) document.querySelector("input[name=dkod]").focus();
+			}
+		}
+	}
+ 	ajax.open("GET", "https://restcountries.eu/rest/v1/alpha?codes=" + kod, true);
+	ajax.send();}
 }

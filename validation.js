@@ -1,4 +1,4 @@
-var validForm = false;
+svar validForm = false;
 
 function validateEmail() {
     var email = document.querySelector("input[type=email]");

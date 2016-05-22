@@ -40,7 +40,9 @@
     if(!isset($_SESSION)) 
     { 
         session_start(); 
-    }                     if(isset($_SESSION["username"])) echo '<a class="login_button" href="#">Dobrodosli ' . $_SESSION["username"] . '</a>';
+    }                     if(isset($_SESSION["username"])){
+        echo '<a class="nav_button" href="unosnovosti.php">Unos vijesti</a>';
+     echo '<a class="login_button" href="#">Dobrodosli ' . $_SESSION["username"] . '</a>';}
                     else echo '<a class="login_button" href="login.php">Login</a>';
                 ?>
             </li>

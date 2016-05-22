@@ -51,6 +51,10 @@
     } 
     if(isset($_SESSION["username"])) 
        echo '<form action="unosnovosti.php" method="post" name="unosnovosti_forma" onsubmit="return validateForm();">
+                <label>Dvoslovni kod države</label>
+                <input type="text" name="dkod" onfocus="resetErrors();" onblur="validateKodIbrojTelefona();">
+                <label>Broj telefona</label>
+                <input type="text" name="brtel" onfocus="resetErrors();" onblur="validateKodIbrojTelefona();">
                 <label>Naslov vijesti</label>
                 <input type="text" name="naslov">
                 <label>Tekst vijesti</label>
