@@ -385,6 +385,34 @@ span.news_datetime {
     margin-left: 170px;
 }
 
+.submitbtn {
+    margin-top: 20px;
+}
+
+.validation_alert {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    color: red;
+    font-family: sans-serif;
+    font-size: 14px;
+    background-color: lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.validation_success {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    color: green;
+    font-family: sans-serif;
+    font-size: 14px;
+    background-color: lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 /*logo stylesheet*/
 #logo_container {
     background-color: cornflowerblue;

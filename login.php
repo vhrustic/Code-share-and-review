@@ -38,8 +38,10 @@
         </ul>
     </nav>
     <?php  
-    session_start();
-    if(isset($_POST["loginbtn"]) && isset($_POST["username"]) && isset($_POST["password"])){
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }     if(isset($_POST["loginbtn"]) && isset($_POST["username"]) && isset($_POST["password"])){
         $usersArr = file("users.csv");
         $nePostojiUser = true;
         foreach ($usersArr as $key => $userStr) {
@@ -61,7 +63,7 @@
             <input type="text" name="username" placeholder="Username">
             <label>Password</label>
             <input type="password" name="password" placeholder="Password">
-            <input type="submit" name="loginbtn" value="Pošalji">
+            <input type="submit" class="submitbtn" name="loginbtn" value="Pošalji">
             </form>';
     }
     else echo "<p>Dobrodosli <b>" .  $_SESSION["username"] . "</b>. Kliknite <a href=\"index.php\">ovdje</a> za povratak na početnu.</p>";
