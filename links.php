@@ -31,10 +31,17 @@
 
     <nav>
         <ul>
-            <li><a class="nav_button" href="index.html">Naslovnica</a></li>
-            <li><a class="nav_button" href="languages.html">Lista jezika</a></li>
-            <li><a class="nav_button" href="links.html">Linkovi</a></li>
-            <li><a class="nav_button" href="contact.html">Kontakt</a></li>
+            <li><a class="nav_button" href="index.php">Naslovnica</a></li>
+            <li><a class="nav_button" href="languages.php">Lista jezika</a></li>
+            <li><a class="nav_button" href="links.php">Linkovi</a></li>
+            <li><a class="nav_button" href="contact.php">Kontakt</a></li>
+            <li id="username_navbar">
+                <?php
+                    session_start();
+                    if(isset($_SESSION["username"])) echo '<a class="login_button" href="#">Dobrodosli ' . $_SESSION["username"] . '</a>';
+                    else echo '<a class="login_button" href="login.php">Login</a>';
+                ?>
+            </li>
         </ul>
     </nav>
 
