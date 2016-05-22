@@ -296,7 +296,7 @@ aside > h3 {
 
 /*pocetak contact stylesheeta*/
 
-form {
+.form {
     text-align: center;
     font-family: 'Arimo', sans-serif;
     margin-top: 25px !important;
@@ -309,20 +309,20 @@ form {
     margin-bottom: 20px;
 }
 
-form > label {
+.form > label {
     display: block;
     padding-bottom: 6px;
     padding-top: 15px;
     font-size: 14px;
 }
 
-form > input {
+.form > input {
     display: block;
     width: 50%;
     margin: auto;
 }
 
-form > textarea {
+.form > textarea {
     display: block;
     width: 50%;
     max-width: 50%;

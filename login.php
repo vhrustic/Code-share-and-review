@@ -58,7 +58,7 @@
     }
 
     if(!isset($_SESSION['username'])){
-        echo '<form onsubmit="validateForm()" method="post" action="login.php" name="login_forma">
+        echo '<form onsubmit="validateForm()" method="post" action="login.php" name="login_forma" class="form">
             <label>Username</label>
             <input type="text" name="username" placeholder="Username">
             <label>Password</label>

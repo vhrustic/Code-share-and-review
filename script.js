@@ -71,7 +71,7 @@ function showOnlyThisWeekNews() {
         if (item.id == "latest_news" || item.className == "other_news") {
             var weekStart = (new Date()).getDate() - (new Date()).getDay() + 1;
             var monday = new Date((new Date()).setDate(weekStart)).getDate();
-            if (item.originalDateTime.substring(0, 2) < monday) item.style.display = 'none'; //sakrij vrijesti prije ponedjeljka tekuce sedmice
+            if (item.originalDateTime.substring(0, 2) < monday) item.style.display = 'none'; //sakrij vijesti prije ponedjeljka tekuce sedmice
             else item.style.display = oldDisplayStyle; //u suprotnom prikazi
         }
     });

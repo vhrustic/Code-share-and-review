@@ -50,7 +50,7 @@
         session_start(); 
     } 
     if(isset($_SESSION["username"])) 
-       echo '<form action="unosnovosti.php" method="post" name="unosnovosti_forma" onsubmit="return validateForm();">
+       echo '<form action="unosnovosti.php" method="post" name="unosnovosti_forma" onsubmit="return validateForm();" class="form">
                 <label>Dvoslovni kod države</label>
                 <input type="text" name="dkod" onfocus="resetErrors();" onblur="validateKodIbrojTelefona();">
                 <label>Broj telefona</label>
@@ -81,7 +81,7 @@
             }
             if(strlen($errorPoruke) > 0) echo '<div class="validation_alert">' . $errorPoruke . '</div>';
             else { //mozemo sacuvat vijest
-            $vijest = $_POST["naslov"] . "__--__" . $_POST["sadrzaj"] . "__--__" . $_POST["url"] . "^^^^^^"; 
+            $vijest = $_POST["naslov"] . "__--__" . $_POST["sadrzaj"] . "__--__" . $_POST["url"] . "__--__" . date('d.m.Y H:i') . "^^^^^^"; 
             file_put_contents('news.csv', $vijest.PHP_EOL , FILE_APPEND);
             echo '<div class="validation_success"><p>Uspjesno ste objavili vijest.</p></div>';
         }

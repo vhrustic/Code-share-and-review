@@ -1,7 +1,7 @@
 var errorPoruke = "";
 
 function validateForm(){
-	if(errorPorukeKodTel.length > 0) return false;
+	if(!validanKod || !validanBroj) {alert("Uneseni kod države i/ili broj telefona nisi validni."); return false;}
 	errorPoruke = "";
 	errorPoruke += validateNaslov() + validateSadrzaj() + validateUrl();
 	if(errorPoruke.length > 0) {alert(errorPoruke); return false;}
@@ -40,36 +40,37 @@ function validateUrl(){
 }
 
 var errorPorukeKodTel = "";
-	var validanKod = true;
-	var validanBroj = true;
+var validanKod = false;
+var validanBroj = false;
 
 function resetErrors(){
 	errorPorukeKodTel = "";
-	validanKod = true;
-	validanBroj = true;
+	validanKod = false;
+	validanBroj = false;
 }
 
 function validateKodIbrojTelefona()
 {
 	var kod = document.querySelector("input[name=dkod]").value;
 	var brtel = document.querySelector("input[name=brtel]").value;
-
 	var ajax = new XMLHttpRequest();
 	if(brtel.length >0){
 	ajax.onreadystatechange = function() {// Anonimna funkcija
 		if (ajax.readyState == 4 && ajax.status == 200){
 			var JsonRezultat = JSON.parse(ajax.responseText);
-			if(JsonRezultat[0] == null) {errorPorukeKodTel += "Nepostojeći kod države! "; validanKod = false;}
-			else {
+			if(JsonRezultat[0] == null) {errorPorukeKodTel += "Nepostojeći kod države! ";}
+			else validanKod = true;
+			if(validanKod) {
 				var cClength = JsonRezultat[0].callingCodes[0].length+1;
 				if(brtel.substring(0, cClength) != ('+' + JsonRezultat[0].callingCodes[0])){validanBroj = false; errorPorukeKodTel += " Pozivni broj ne odgovara izabranoj državi(očekivano: +" + JsonRezultat[0].callingCodes[0] +"). ";}
 				else if(brtel.length == cClength) {validanBroj = false; errorPorukeKodTel += "Uneseni broj telefona je nepotpun. ";}
+				else validanBroj = true;
 			}
 			if(errorPorukeKodTel.length > 0) { 
 				alert(errorPorukeKodTel);
 				if(!validanBroj) document.querySelector("input[name=brtel]").focus(); 
-				if(!validanKod) document.querySelector("input[name=dkod]").focus();
 			}
+			else {validanKod = validanBroj = true;}
 		}
 	}
  	ajax.open("GET", "https://restcountries.eu/rest/v1/alpha?codes=" + kod, true);

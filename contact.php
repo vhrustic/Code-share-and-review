@@ -50,7 +50,7 @@
     </nav>
 
 
-    <form onsubmit="validateForm()">
+    <form onsubmit="validateForm()" class="form">
         <label>Email</label>
         <input type="email" name="email" placeholder="email adresa" onkeyup="validateEmail()">
         <label>Datum rođenja</label>
